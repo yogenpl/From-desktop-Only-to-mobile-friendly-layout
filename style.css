@@ -1,4 +1,4 @@
-/* Prevent horizontal scroll */
+/* General styles */
 html, body {
   width: 100%;
   overflow-x: hidden;
@@ -17,8 +17,20 @@ header {
   position: relative;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 header h1 {
-  margin: 0 0 10px;
+  margin: 0;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
 }
 
 /* Navigation */
@@ -41,7 +53,7 @@ header h1 {
   font-weight: bold;
 }
 
-/* Hamburger button */
+/* Hamburger menu */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -50,7 +62,7 @@ header h1 {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  user-select: none; /* prevent text highlight */
+  user-select: none;
 }
 
 /* Hero section */
@@ -60,6 +72,13 @@ header h1 {
   text-align: center;
 }
 
+.hero-img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
 /* Columns */
 .columns {
   display: flex;
@@ -67,16 +86,24 @@ header h1 {
   justify-content: space-between;
   padding: 20px;
   gap: 20px;
-  box-sizing: border-box;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .column {
-  background: #eaeaea;
-  padding: 20px;
   flex: 1;
   min-width: 250px;
+  background: #eaeaea;
+  padding: 20px;
   box-sizing: border-box;
+  text-align: center;
+}
+
+.column-img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
 }
 
 /* Footer */
@@ -122,6 +149,11 @@ footer {
   .nav-links.active {
     display: flex;
   }
+
+  /* Hide logo on mobile */
+  .logo {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -142,6 +174,7 @@ footer {
   }
 }
 
+/* Ensure all images scale */
 img {
   max-width: 100%;
   height: auto;
